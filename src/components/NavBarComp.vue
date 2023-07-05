@@ -6,7 +6,7 @@
         </a>
       </div>
 
-      <input type="checkbox" id="hamburger" />
+      <input type="checkbox"  />
       <label for="hamburger">
         <i class="fa-solid fa-bars"></i>
       </label>
