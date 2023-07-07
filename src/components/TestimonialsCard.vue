@@ -53,4 +53,16 @@ export default{
     .card p{
         margin-top: 45px;
     }
+
+    @media screen and (max-width: 700px) {
+      .card{
+        width: 270px;
+        min-height: 450px;
+      }
+      .details img{
+      width: 85px;
+      height: 80px;
+      border-radius: 50%;
+      }
+    }
 </style>

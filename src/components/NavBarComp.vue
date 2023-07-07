@@ -1,24 +1,42 @@
 <template>
-    <nav>
-      <div class="logo">
-        <a href="/">
-          <img src="https://i.postimg.cc/jq4VMfdT/v.png" alt="Nav-Comp">
-        </a>
+    <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" href="/">
+      <img src="https://i.postimg.cc/jq4VMfdT/v.png" alt="Nav-Comp">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">My Links</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-
-      <input type="checkbox"  />
-      <label for="hamburger">
-        <i class="fa-solid fa-bars"></i>
-      </label>
-        <ul>
-          <li><a class="links" href="/">Home</a></li>
-          <li><a class="links" href="/about">About</a></li>
-          <li><a class="links" href="/testimonials">Testimonials</a></li>
-          <li><a class="links" href="/projects">Projects</a></li>
-          <li><a class="links" href="/contact">Contact</a></li>
-          <li><a class="links" href="/resume">Resume</a></li>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link links" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="/resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="/projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="/testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link links" href="/contact">Contact</a>
+          </li>
         </ul>
-    </nav>
+      </div>
+    </div>
+  </div>
+</nav>
 </template>
 
 <script>
@@ -36,22 +54,17 @@ export default{
         background-image: linear-gradient(147deg, #000000 0%, #333 74%);
         padding: 1em;
     }
+    .offcanvas-header, .offcanvas-body{
+      background: #333;
+    }
+    .navbar-nav{
+      display: flex;
+    }
     
     nav .links {
       text-decoration: none;
       text-transform: capitalize;
       color: #ffffff;
-    }
-    #logo {
-      font-size: 1.2em;
-      font-weight: 600;
-    }
-    input[type="checkbox"] {
-      appearance: none;
-    }
-    label {
-      display: none;
-      cursor: pointer;
     }
     ul {
       list-style: none;
@@ -64,9 +77,9 @@ export default{
     }
     .links:hover {
       background-color: #000000;
-      background-image: linear-gradient(147deg, #000000 0%, #333 74%);
       border-radius: 0.5em;
       border: none;
+
     }
     .active {
       border-bottom: 2px solid #ffffff;
@@ -77,27 +90,7 @@ export default{
       height: 80px;
     }
 
-    @media screen and (max-width: 600px) {
-    label {
-        display: block;
-    }
-    ul {
-        font-size: 1.2em;
-        position: absolute;
-        left: -100%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #333333;
-        gap: 2em;
-        top: 100px;
-        width: 100%;
-        height: 100vh;
-        transition: 0.5s;
-    }
-    input[type="checkbox"]:checked ~ ul {
-        left: 0;
-      }
+    @media screen and (max-width: 700px) {
     ul .links:hover {
         background-color: #000000;
         background-image: linear-gradient(147deg, #000000 0%, #333 74%);

@@ -1,15 +1,17 @@
 <template>
-    <HelloWorld />
+  
+    <LandingComp />
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import LandingComp from '@/components/LandingComp.vue'
+ 
 export default {
-  name: 'HomeView',
   components: {
-    HelloWorld
+     LandingComp,
+ 
   }
+ 
 }
 </script>

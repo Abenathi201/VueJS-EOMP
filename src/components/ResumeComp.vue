@@ -191,15 +191,59 @@ export default{
         margin-top: -10px;
     }
 
-    .text1{
-        font-size: 13px;
-    }
-    .header{
-        font-weight: 400;
-        letter-spacing: 1px;
-    }
-    .text1{
-        font-size: 15px;
-        font-weight: 500;
+    @media screen and (max-width: 700px) {
+        .resume{
+            display: flex;
+            flex-direction: column;
+            /* flex-wrap: wrap; */
+            /* padding: 50px; */
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .content{
+            padding: 10px;
+            margin: auto;
+        }
+        .content p{
+            /* padding: 10px;
+            margin: auto; */
+            margin: 0;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        .content ul{
+            margin-left: -40px;
+            margin-bottom: 40px;
+        }
+        h3{
+        margin: 0;
+        color: black;
+        /* font-weight: 300; */
+        }
+
+        .left{
+            /* margin-left: 50px; */
+            width: 200px;
+            background-color: transparent;
+            height: 100%;
+            margin: auto;
+        }
+        .right{
+            width: 210px;
+        }
+        .text{
+            font-size: 17px;
+            margin-top: 0;
+        }
+        .interests ul{
+            display: flex;
+            flex-wrap: wrap;
+            /* margin-block: 5px; */
+            gap: 5px;
+        }
+        .interests ul li{
+            margin-block: 5px;
+        }
     }
 </style>

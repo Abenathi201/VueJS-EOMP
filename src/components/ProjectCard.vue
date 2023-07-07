@@ -5,10 +5,8 @@
           <img :src="project.image" :alt="project.name">
           <div class="overlay project-img">
             <p><i class="fas fa-eye fa-2x"></i></p>
-            <h5>{{ project.name }}</h5>
             <div class="btns">
                 <a :href="project.link" target="_blank" class="link-btn">Netlify Link</a>
-                <a :href="project.github" target="_blank" class="link-btn">GitHub Link</a>
             </div>
           </div>
         <!-- </a> -->
@@ -94,5 +92,12 @@ export default{
         padding: 10px;
         color: #d9d9d9;
         transition: all 0.3s;
+    }
+
+    @media screen and (max-width: 700px) {
+      .project-card{
+        width: 250px;
+        height: 400px;
+      }
     }
 </style>

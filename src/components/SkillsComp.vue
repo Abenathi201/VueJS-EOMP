@@ -24,4 +24,12 @@ export default{
         width: 75px;
         padding-right: 20px;
     }
+
+    @media screen and (max-width: 700px) {
+        .skills{
+            margin-left: -20px;
+            /* margin-bottom: 20px; */
+            display: flex;
+        }
+    }
 </style>

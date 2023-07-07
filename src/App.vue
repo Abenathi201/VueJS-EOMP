@@ -1,13 +1,16 @@
 <template>
   <NavBarComp />
   <router-view/>
+  <FooterComp/>
 </template>
 
 <script>
 import NavBarComp from './components/NavBarComp.vue';
+import FooterComp from './components/FooterComp.vue';
 
 export default {
-  components: { NavBarComp }
+  name: 'App',
+  components: { NavBarComp, FooterComp }
 }
 </script>
 
@@ -17,7 +20,18 @@ export default {
     padding: 0;
     box-sizing: border-box;
   }
+  
+  #app{
+    background: #333;
+  }
+
   nav{
     background: transparent;
+  }
+
+  @media screen and (max-width: 700px) {
+    *{
+      overflow: visible;
+    }
   }
 </style>

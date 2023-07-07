@@ -68,10 +68,10 @@ export default{
   }
 
   content{
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 600;
-      color: azure;
-      line-height: 1.4;
+      color: white;
+      text-align: center;
   }
 
   content::after{
@@ -87,5 +87,54 @@ export default{
       font-size: 20px;
       color: azure;
       margin-top: 10px;
+  }
+
+  @media screen and (max-width: 700px) {
+    template{
+        overflow-x: hidden;
+    }
+    article h1{
+      font-size: 40px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: azure;
+      text-align: center;
+    }
+
+    article h1::after{
+        content: "";
+        height: 3px;
+        width: 200px;
+        background-color: azure;
+        display: block;
+        margin: auto
+    }
+
+    article img{
+      margin: auto;
+      display: block;
+      margin-top: 40px;
+      height: 15rem;
+      width: 10rem;
+      border-radius: 10px 50% /* --- If a circle looks better*/;
+      /* box-shadow: .3vw .3vw .5vw  azure; */
+      margin-bottom: 28px;
+    }
+
+    content{
+      font-size: 14px;
+      font-weight: 150;
+      color: azure;
+      line-height: 1.4;
+    }
+
+    article h5{
+      text-transform: uppercase;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      margin-top: 30px;
+  }
+
   }
 </style>

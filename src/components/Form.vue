@@ -1,23 +1,26 @@
 <template>
-    <form @submit.prevent="submitForm">
+    <h1>Leave Your Details Below and We'll be in Touch</h1>
+    <div>
+        <form action="https://formspree.io/f/maygyqgw" method="POST">
 
-        <label>Name:</label>
-        <input type="text" required v-model="name">
+            <label>Name:</label>
+            <input type="text" required v-model="name">
 
-        <label>Email:</label>
-        <input type="email" required v-model="email">
+            <label>Email:</label>
+            <input type="email" name="email" required v-model="email">
 
-        <label>Number:</label>
-        <input type="number" required v-model="password">
+            <label>Number:</label>
+            <input type="number" required v-model="password">
 
-        <div class="terms">
-            <input type="checkbox" v-model="terms" required>
-            <label>Accept the terms and conditions</label>
-        </div>
-        <div class="btn">
-            <button>Sumbit</button>
-        </div>
-    </form>
+            <div class="terms">
+                <input type="checkbox" v-model="terms" required>
+                <label>Accept the terms and conditions</label>
+            </div>
+            <div class="btn">
+                <button type="submit" value="">Submit</button>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -61,6 +64,12 @@ export default{
         padding: 40px;
         border-radius: 10px;
         text-align: left;
+    }
+
+    h1{
+        text-align: center;
+        margin-block: 20px;
+        color: white;  
     }
 
     label{
@@ -124,5 +133,11 @@ export default{
         margin-top: 10px;
         font-size: 13px;
         
+    }
+
+    @media screen and (max-width: 700px) {
+        form{
+            max-width: 300px;
+        }    
     }
 </style>
