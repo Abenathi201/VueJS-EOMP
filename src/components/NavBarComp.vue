@@ -16,6 +16,7 @@
           <li><a class="links" href="/testimonials">Testimonials</a></li>
           <li><a class="links" href="/projects">Projects</a></li>
           <li><a class="links" href="/contact">Contact</a></li>
+          <li><a class="links" href="/resume">Resume</a></li>
         </ul>
     </nav>
 </template>

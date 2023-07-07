@@ -1,9 +1,14 @@
 import { createStore } from "vuex";
 
+const database = "https://abenathi201.github.io/data/db.json"
+
 export default createStore({
   state: {
     testimonials: null,
-    projects: null
+    projects: null,
+    education: null,
+    experience: null,
+    skills: null
   },
 
   mutations: {
@@ -11,16 +16,28 @@ export default createStore({
       state.testimonials = testimonials;
     },
 
-    setProjects: (state, projects) =>{
+    setProjects: (state, projects) => {
       state.projects = projects;
+    },
+
+    setEducation: (state, education) => {
+      state.education = education
+    },
+
+    setExperience: (state, experience) => {
+      state.experience = experience
+    },
+
+    setSkills: (state, skills) => {
+      state.skills = skills
     }
   },
 
   actions: {
     async getTestimonials(context) {
       try {
-        const response = await fetch("https://abenathi201.github.io/data/testimonials.json");
-        let  testimonials  = await response.json();
+        const response = await fetch(database)
+        let  {testimonials}  = await response.json();
         context.commit("setTestimonials", testimonials);
         console.log(testimonials)
       } catch (error) {
@@ -30,12 +47,45 @@ export default createStore({
 
     async getProjects(context) {
       try{
-        const res = await fetch("https://abenathi201.github.io/data/projects.json");
-        let projects = await res.json();
+        const res = await fetch(database)
+        let {projects} = await res.json();
         context.commit("setProjects", projects);
         console.log(projects);
       } catch (error) {
         context.commit("Projects Error", error.message)
+      }
+    },
+
+    async getEducation(context) {
+      try{
+        const res = await fetch(database)
+        let {education} = await res.json();
+        context.commit("setEducation", education);
+        console.log(education);
+      } catch (error) {
+        context.commit("Education Error", error.message)
+      }
+    },
+
+    async getExperience(context) {
+      try{
+        const res = await fetch(database)
+        let {experience} = await res.json();
+        context.commit("setExperience", experience);
+        console.log(experience);
+      } catch (error) {
+        context.commit("Experience Error", error.message)
+      }
+    },
+
+    async getSkills(context) {
+      try{
+        const res = await fetch(database)
+        let {skills} = await res.json();
+        context.commit("setSkills", skills);
+        console.log(skills);
+      } catch (error) {
+        context.commit("Skills Error", error.message)
       }
     }
   }
